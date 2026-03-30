@@ -7,9 +7,9 @@ import {
   ShoppingCart, Database, Phone, Users, Trophy, Search,
   BarChart3, Star, Megaphone, Scale, ShieldAlert, DoorOpen,
   Play, ExternalLink, ChevronDown, ChevronUp, GraduationCap,
-  Library, Filter, X, Lightbulb, CheckCircle2, Moon, Sun,
+  Library, Filter, X, Lightbulb, CheckCircle2, Moon, Sun, Rocket, BookOpenCheck,
 } from 'lucide-react'
-import { categories, allVideos, ninjaConcepts, type Category, type Video } from './ninjaLibraryData'
+import { categories, allVideos, ninjaConcepts, gettingStartedSteps, type Category, type Video } from './ninjaLibraryData'
 
 const iconMap: Record<string, React.ElementType> = {
   Brain, BookOpen, Target, ListChecks, TrendingUp, Sparkles,
@@ -39,6 +39,8 @@ export default function NinjaLibraryPage() {
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(null)
   const [playingVideo, setPlayingVideo] = useState<Video | null>(null)
   const [expandedConcept, setExpandedConcept] = useState<string | null>('four-cornerstones')
+  const [showDeepDive, setShowDeepDive] = useState<string | null>(null)
+  const [conceptsView, setConceptsView] = useState<'concepts' | 'getting-started'>('concepts')
   const [videoSearchQuery, setVideoSearchQuery] = useState('')
 
   const filteredVideos = useMemo(() => {
@@ -356,66 +358,177 @@ export default function NinjaLibraryPage() {
               </p>
             </div>
 
-            <div className="space-y-3">
-              {ninjaConcepts.map(concept => {
-                const isExpanded = expandedConcept === concept.id
-                return (
-                  <div
-                    key={concept.id}
-                    className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden transition-all hover:shadow-md"
-                  >
-                    <button
-                      onClick={() => setExpandedConcept(isExpanded ? null : concept.id)}
-                      className="w-full p-5 flex items-center justify-between text-left"
-                    >
-                      <div className="flex items-center gap-3">
-                        <div className="p-2 bg-ninja-blue/10 dark:bg-ninja-blue/20 rounded-lg">
-                          <Lightbulb className="w-5 h-5 text-ninja-blue" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-ninja-dark dark:text-white">{concept.name}</h3>
-                          <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">{concept.description}</p>
-                        </div>
-                      </div>
-                      {isExpanded ? (
-                        <ChevronUp className="w-5 h-5 text-gray-400 flex-shrink-0 ml-4" />
-                      ) : (
-                        <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0 ml-4" />
-                      )}
-                    </button>
+            {/* Sub-navigation: Concepts vs Getting Started */}
+            <div className="flex justify-center mb-6">
+              <div className="flex gap-1 bg-gray-100 dark:bg-gray-800 p-1 rounded-xl">
+                <button
+                  onClick={() => setConceptsView('concepts')}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                    conceptsView === 'concepts'
+                      ? 'bg-white dark:bg-gray-700 text-ninja-dark dark:text-white shadow-sm'
+                      : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'
+                  }`}
+                >
+                  <Lightbulb className="w-4 h-4" />
+                  Key Concepts
+                </button>
+                <button
+                  onClick={() => setConceptsView('getting-started')}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                    conceptsView === 'getting-started'
+                      ? 'bg-white dark:bg-gray-700 text-ninja-dark dark:text-white shadow-sm'
+                      : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'
+                  }`}
+                >
+                  <Rocket className="w-4 h-4" />
+                  Getting Started Guide
+                </button>
+              </div>
+            </div>
 
-                    {isExpanded && (
-                      <div className="px-5 pb-5 border-t border-gray-100 dark:border-gray-700">
-                        <div className="grid md:grid-cols-2 gap-6 pt-4">
-                          <div>
-                            <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">Key Principles</h4>
-                            <ul className="space-y-2">
-                              {concept.principles.map((principle, i) => (
-                                <li key={i} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
-                                  <div className="w-1.5 h-1.5 rounded-full bg-ninja-blue mt-1.5 flex-shrink-0" />
-                                  {principle}
-                                </li>
-                              ))}
-                            </ul>
+            {/* Key Concepts View */}
+            {conceptsView === 'concepts' && (
+              <div className="space-y-3">
+                {ninjaConcepts.map(concept => {
+                  const isExpanded = expandedConcept === concept.id
+                  const isDeepDive = showDeepDive === concept.id
+                  return (
+                    <div
+                      key={concept.id}
+                      className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden transition-all hover:shadow-md"
+                    >
+                      <button
+                        onClick={() => {
+                          setExpandedConcept(isExpanded ? null : concept.id)
+                          if (isExpanded) setShowDeepDive(null)
+                        }}
+                        className="w-full p-5 flex items-center justify-between text-left"
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className="p-2 bg-ninja-blue/10 dark:bg-ninja-blue/20 rounded-lg">
+                            <Lightbulb className="w-5 h-5 text-ninja-blue" />
                           </div>
                           <div>
-                            <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">Action Items</h4>
+                            <h3 className="font-semibold text-ninja-dark dark:text-white">{concept.name}</h3>
+                            <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">{concept.description}</p>
+                          </div>
+                        </div>
+                        {isExpanded ? (
+                          <ChevronUp className="w-5 h-5 text-gray-400 flex-shrink-0 ml-4" />
+                        ) : (
+                          <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0 ml-4" />
+                        )}
+                      </button>
+
+                      {isExpanded && (
+                        <div className="px-5 pb-5 border-t border-gray-100 dark:border-gray-700">
+                          {/* Deep Dive Toggle */}
+                          <button
+                            onClick={() => setShowDeepDive(isDeepDive ? null : concept.id)}
+                            className="mt-4 mb-4 flex items-center gap-2 text-sm font-medium text-ninja-blue hover:text-ninja-blue/80 transition-colors"
+                          >
+                            <BookOpenCheck className="w-4 h-4" />
+                            {isDeepDive ? 'Hide Deep Dive' : 'Read Deep Dive'}
+                            {isDeepDive ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
+                          </button>
+
+                          {isDeepDive && (
+                            <div className="mb-5 p-4 bg-ninja-blue/5 dark:bg-ninja-blue/10 rounded-xl border border-ninja-blue/20">
+                              <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">{concept.deepDive}</p>
+                            </div>
+                          )}
+
+                          <div className="grid md:grid-cols-2 gap-6">
+                            <div>
+                              <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">Key Principles</h4>
+                              <ul className="space-y-3">
+                                {concept.principles.map((principle, i) => (
+                                  <li key={i} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-ninja-blue mt-1.5 flex-shrink-0" />
+                                    {principle}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                            <div>
+                              <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">Action Items</h4>
+                              <ul className="space-y-3">
+                                {concept.actionItems.map((item, i) => (
+                                  <li key={i} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <CheckCircle2 className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                                    {item}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )
+                })}
+              </div>
+            )}
+
+            {/* Getting Started Guide View */}
+            {conceptsView === 'getting-started' && (
+              <div>
+                <div className="mb-6 p-5 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-xl text-white">
+                  <h3 className="text-lg font-bold mb-2">Your 10-Week Ninja Selling Launch Plan</h3>
+                  <p className="text-white/90 text-sm leading-relaxed">
+                    Follow these 8 steps over roughly 10 weeks to go from zero to a fully operational Ninja Selling practice.
+                    Don&apos;t try to do everything at once — each step builds on the previous one. Consistency beats perfection.
+                  </p>
+                </div>
+
+                <div className="relative">
+                  {/* Timeline line */}
+                  <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-700 hidden sm:block" />
+
+                  <div className="space-y-4">
+                    {gettingStartedSteps.map((step) => (
+                      <div key={step.step} className="relative">
+                        {/* Timeline dot */}
+                        <div className="absolute left-4 top-6 w-5 h-5 rounded-full bg-ninja-blue text-white text-xs font-bold flex items-center justify-center z-10 hidden sm:flex">
+                          {step.step}
+                        </div>
+
+                        <div className="sm:ml-14 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-5 hover:shadow-md transition-shadow">
+                          <div className="flex items-start justify-between mb-2">
+                            <div className="flex items-center gap-2">
+                              <span className="sm:hidden inline-flex items-center justify-center w-6 h-6 rounded-full bg-ninja-blue text-white text-xs font-bold">{step.step}</span>
+                              <h3 className="font-semibold text-ninja-dark dark:text-white">{step.title}</h3>
+                            </div>
+                            <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300 flex-shrink-0 ml-3">
+                              {step.timeframe}
+                            </span>
+                          </div>
+                          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4">{step.description}</p>
+                          <div>
+                            <h4 className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">Tasks</h4>
                             <ul className="space-y-2">
-                              {concept.actionItems.map((item, i) => (
+                              {step.tasks.map((task, i) => (
                                 <li key={i} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
                                   <CheckCircle2 className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                                  {item}
+                                  {task}
                                 </li>
                               ))}
                             </ul>
                           </div>
                         </div>
                       </div>
-                    )}
+                    ))}
                   </div>
-                )
-              })}
-            </div>
+                </div>
+
+                <div className="mt-8 p-5 bg-gray-50 dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-700 text-center">
+                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                    Remember: Ninja Selling is a marathon, not a sprint. Most agents see meaningful results within 60-90 days of consistent practice.
+                    The key is to start imperfectly and improve over time. As Larry Kendall says: <em>&quot;The Ninja system works if you work the system.&quot;</em>
+                  </p>
+                </div>
+              </div>
+            )}
           </div>
         )}
       </main>

@@ -17,9 +17,125 @@ export interface NinjaConcept {
   id: string
   name: string
   description: string
+  deepDive: string
   principles: string[]
   actionItems: string[]
 }
+
+export interface GettingStartedStep {
+  step: number
+  title: string
+  description: string
+  timeframe: string
+  tasks: string[]
+}
+
+export const gettingStartedSteps: GettingStartedStep[] = [
+  {
+    step: 1,
+    title: "Commit to the Mindset Shift",
+    description: "Before any tactics, Ninja Selling requires a fundamental shift: stop thinking like a salesperson, start thinking like a problem solver. You are not selling houses — you are helping people make the best decisions for their lives. Read (or re-read) Larry Kendall's book 'Ninja Selling: Subtle Skills. Big Results.' to internalize the philosophy.",
+    timeframe: "Week 1",
+    tasks: [
+      "Read 'Ninja Selling' by Larry Kendall cover to cover",
+      "Write down your personal 'why' — why are you in real estate beyond money?",
+      "Create your Life List: 100 things you want to be, do, and have in your lifetime",
+      "Set a 'Word of the Year' that will guide your focus and intentions"
+    ]
+  },
+  {
+    step: 2,
+    title: "Build Your Morning Routine",
+    description: "Your morning routine is the engine of the Ninja system. The first three of the Ninja Nine happen before you start 'work.' A consistent morning routine programs your subconscious mind for success and ensures you start each day intentionally rather than reactively.",
+    timeframe: "Week 1-2",
+    tasks: [
+      "Set a consistent wake-up time and protect the first 60-90 minutes of your day",
+      "Start a gratitude journal — write 3 things you're grateful for each morning",
+      "Write and read your affirmations daily (present tense, positive statements about your goals)",
+      "Spend 5-10 minutes visualizing your ideal day and the goals you're working toward",
+      "Review your schedule, goals, and priorities before checking email or social media"
+    ]
+  },
+  {
+    step: 3,
+    title: "Organize Your Database",
+    description: "Your database is your most valuable business asset. Ninja Selling is a relationship-based system, so you need to know exactly who is in your world, how to reach them, and how to provide them value. A disorganized database means missed opportunities every single day.",
+    timeframe: "Week 2-3",
+    tasks: [
+      "Choose a CRM system (or clean up your existing one) — Top Producer, Follow Up Boss, KvCORE, etc.",
+      "Import all contacts: past clients, sphere of influence, friends, family, neighbors, community connections",
+      "Categorize contacts into A (close relationships), B (acquaintances), and C (met once / loose connections)",
+      "Add FORD notes (Family, Occupation, Recreation, Dreams) for everyone you know well",
+      "Identify your Hot List: people likely to buy, sell, or refer within the next 12 months",
+      "Set a goal to grow your database by 2-5 new contacts per week"
+    ]
+  },
+  {
+    step: 4,
+    title: "Launch Your Ninja Nine Habits",
+    description: "The Ninja Nine are non-negotiable daily and weekly disciplines. Don't try to be perfect — just start. Consistency compounds over time. Most agents see meaningful results within 60-90 days of consistent Ninja Nine practice. Track everything on your Ninja Scorecard.",
+    timeframe: "Week 3-4",
+    tasks: [
+      "Order personal note cards and stamps — write 2 handwritten notes per day",
+      "Schedule your weekly phone/call time — aim for 50 live conversations per week",
+      "Set up your Ninja Scorecard (spreadsheet or printed) and track daily activities",
+      "Block 'P-Time' (Proactive Time) on your calendar — this is when you do database work, calls, and notes",
+      "Start your weekly planning session: every Sunday or Monday, plan your Ninja Nine for the week"
+    ]
+  },
+  {
+    step: 5,
+    title: "Set Up Your Flow System",
+    description: "Flow is how you stay in touch with your database consistently, so when someone is ready to buy, sell, or refer, you are the first person they think of. Auto-Flow handles the baseline touches automatically; Personal Flow adds the human element that builds real trust.",
+    timeframe: "Week 4-6",
+    tasks: [
+      "Set up Auto-Flow: a monthly email or newsletter with market updates, tips, or community news",
+      "Create a quarterly pop-by plan for your top contacts (small gifts + face time)",
+      "Schedule annual Customer Service Calls for all past clients",
+      "Map out your 12-month flow calendar: which touches happen each month?",
+      "Start offering free Annual Real Estate Reviews to homeowners in your database"
+    ]
+  },
+  {
+    step: 6,
+    title: "Master Your Conversations",
+    description: "Ninja Selling is not about scripts — it's about genuine, curious conversations that naturally uncover opportunities. Learn the FORD method, practice the Ninja Interview (asking great questions), and get comfortable with the pricing and consultation conversations.",
+    timeframe: "Week 6-8",
+    tasks: [
+      "Practice the FORD method in every conversation — ask about Family, Occupation, Recreation, and Dreams",
+      "Role-play the Buyer Consultation with a partner until it feels natural",
+      "Role-play the Seller Consultation and pricing conversation",
+      "Learn the '16 Magic Questions' for open houses and buyer interactions",
+      "Practice the 'Hot Button' close: connecting solutions to what people told you they care about"
+    ]
+  },
+  {
+    step: 7,
+    title: "Create Your Business Plan",
+    description: "Now that you have the habits and systems in place, build a concrete business plan that connects your life goals to your daily activities. Work backwards from your income goal to determine exactly how many contacts, appointments, and closings you need.",
+    timeframe: "Week 8-10",
+    tasks: [
+      "Define your annual income goal and calculate your 'number' (closings needed)",
+      "Work backwards: closings needed → appointments needed → contacts needed per week",
+      "Set quarterly milestones so you can track progress and adjust",
+      "Identify your target market and geographic farm area",
+      "Review your plan monthly and adjust based on actual results vs. projections"
+    ]
+  },
+  {
+    step: 8,
+    title: "Join & Engage with the Ninja Community",
+    description: "Ninja Selling works best when you're plugged into a community of like-minded agents. Accountability, shared learning, and consistent reinforcement keep you on track when motivation dips. The Ninja Installation is the ideal starting point, but there are many ways to stay connected.",
+    timeframe: "Ongoing",
+    tasks: [
+      "Attend a Ninja Selling Installation (the official 2-day immersive training)",
+      "Join or form a Ninja Mastermind group for weekly accountability",
+      "Attend your office's Ninja meetings or start one if there isn't one",
+      "Subscribe to the Ninja Selling YouTube channel and watch 1-2 videos per week",
+      "Re-read sections of the book quarterly to reinforce concepts as your business grows"
+    ]
+  }
+]
 
 export const categories: Category[] = [
   { id: "personal-mastery-and-mindset", name: "Personal Mastery & Mindset", description: "Developing a growth mindset, personal mastery, self-improvement, confidence, abundance vs. scarcity thinking, energy management, overcoming fear and limiting beliefs, and the mental game of success.", videoCount: 134, icon: "Brain", gradient: "from-purple-500 to-indigo-600", featuredVideos: [{ id: "IS1470U8xiM", title: "What is Personal Mastery in Ninja Selling?" }, { id: "LtF7nlt2lYk", title: "The Level Up Moment: Leading with Mindset, Skillset, and Action" }, { id: "VFJZeD6iWU8", title: "Building Unshakable Confidence for Real Estate Agents" }, { id: "CRWe1eirLYU", title: "The Perception of Power, Party, Peace, and Perfection Personality Profiles" }, { id: "4lwMtg1zP18", title: "Personal Mastery: The First Cornerstone of Ninja" }] },
@@ -584,155 +700,163 @@ export const ninjaConcepts: NinjaConcept[] = [
   {
     id: "four-cornerstones",
     name: "The Four Cornerstones",
-    description: "The foundation of Ninja Selling rests on four cornerstones that guide everything a Ninja does: Personal Mastery, Stop Selling Start Solving, Ninja Business Strategy, and Connect & Communicate.",
+    description: "The four pillars that form the philosophical and practical foundation of the entire Ninja Selling system.",
+    deepDive: "Larry Kendall built Ninja Selling on four cornerstones that work together as a complete system. Cornerstone 1, Personal Mastery, means working on yourself before you work on your business — your mindset, energy, habits, and personal growth determine the ceiling of your results. Cornerstone 2, Stop Selling Start Solving, flips the traditional sales model: instead of persuading people to buy, you listen deeply and help them solve real problems. This creates trust and eliminates the adversarial dynamic of traditional selling. Cornerstone 3, Ninja Business Strategy, provides the tactical framework — a referral-based business model powered by your database, relationships, and consistent daily habits (the Ninja Nine). Cornerstone 4, Connect & Communicate, recognizes that real estate is a relationship business. Authentic human connection — not marketing funnels or cold outreach — is what produces lasting, compounding results. When all four cornerstones are in place, your business grows organically because people genuinely want to work with you and refer you.",
     principles: [
-      "Personal Mastery: Develop yourself first - mindset, habits, and continuous growth",
-      "Stop Selling, Start Solving: Focus on solving people's problems, not pushing products",
-      "Ninja Business Strategy: Build a referral-based business with a structured plan",
-      "Connect & Communicate: Build authentic relationships through genuine connection"
+      "Personal Mastery: Your business can only grow as fast as you do — invest in mindset, emotional intelligence, physical health, and continuous learning before tactics",
+      "Stop Selling, Start Solving: The best 'sales technique' is genuine curiosity about people's problems and a commitment to helping them find solutions, even if it doesn't result in a transaction for you",
+      "Ninja Business Strategy: Build a referral-based business powered by relationships and consistent daily habits rather than expensive lead generation — your database is your greatest asset",
+      "Connect & Communicate: Master the art of authentic conversation through active listening, empathy, and the FORD method — people do business with those who genuinely care about them"
     ],
     actionItems: [
-      "Start each day with gratitude and affirmations",
-      "In every conversation, ask 'How can I help?' instead of 'How can I sell?'",
-      "Create your annual business plan with clear financial goals",
-      "Practice the FORD method in every interaction"
+      "Start each day with a morning routine: gratitude, affirmations, visualization, and goal review (this IS Personal Mastery in practice)",
+      "In your next 5 conversations, replace 'How's the market?' with 'What's going on in your world? How can I help?'",
+      "Write down your top 50 relationships and assess: when did I last have a meaningful conversation with each person?",
+      "Create your annual business plan starting with your Life List — connect your financial goals to your personal 'why'"
     ]
   },
   {
     id: "ninja-nine",
     name: "The Ninja Nine",
-    description: "Nine daily and weekly disciplines that form the backbone of a successful Ninja practice. These habits, when done consistently, create a compounding effect that builds your business organically.",
+    description: "Nine specific daily and weekly disciplines that, done consistently, create a compounding flywheel of relationships, referrals, and closings.",
+    deepDive: "The Ninja Nine are the heartbeat of the system. They are divided into daily habits (1-5) and weekly habits (6-9). The magic is in the consistency — not perfection. Habit 1, Gratitude, rewires your brain to focus on abundance rather than scarcity. Habit 2, Affirmations & Visualization, programs your subconscious to pursue your goals. Habit 3, Review Goals & Schedule, ensures you work intentionally rather than reactively. Habit 4, Write 2 Personal Notes, creates tangible touchpoints that make people feel valued — handwritten notes have nearly a 100% open rate. Habit 5, Live Interviews (phone calls), is where the real business happens — aim for 50 live conversations per week. Habit 6, Track on the Ninja Scorecard, provides accountability and helps you see which inputs drive results. Habit 7, Ninja Meeting, gives you weekly accountability with peers. Habit 8, Prepare & Practice, means role-playing scripts and consultations so you're sharp when it counts. Habit 9, E-Time (Education), ensures you never stop growing. Most agents who commit to the Ninja Nine for 90 consecutive days see a measurable increase in closings within 6 months.",
     principles: [
-      "1. Gratitude & Appreciation - Start each day grateful",
-      "2. Affirmations & Visualization - See your success before it happens",
-      "3. Review your goals & schedule daily",
-      "4. Write 2 personal notes per day",
-      "5. Make your live interviews (phone calls to your database)",
-      "6. Track your numbers on the Ninja Scorecard",
-      "7. Attend your Ninja sales meeting weekly",
-      "8. Prepare and practice your skills",
-      "9. Invest in personal development (E-Time)"
+      "1. Gratitude & Appreciation — Write 3 things you're grateful for each morning. This shifts your mindset from scarcity to abundance and changes the energy you bring to every interaction",
+      "2. Affirmations & Visualization — Read your affirmations aloud and spend 5 minutes visualizing your goals as already achieved. Your subconscious mind doesn't distinguish between vivid imagination and reality",
+      "3. Review Goals & Schedule — Before your day starts, review your annual goals, monthly targets, and today's schedule. Know your 'Big 3' priorities for the day",
+      "4. Write 2 Personal Notes — Handwritten notes (not business cards, not emails) to people in your database. Reference something personal. This is the single highest-ROI activity in Ninja Selling",
+      "5. Live Interviews — Make phone calls to your database. Not scripts. Real conversations. Ask about their lives using FORD. Aim for 10 live conversations per day / 50 per week",
+      "6. Ninja Scorecard — Track your daily activities (notes sent, calls made, appointments set). What gets measured gets managed. Review weekly to identify patterns",
+      "7. Weekly Ninja Meeting — Meet with your accountability group or team weekly to share wins, challenges, and commitments for the coming week",
+      "8. Prepare & Practice — Role-play buyer consultations, seller presentations, pricing conversations, and objection handling. Skills degrade without practice",
+      "9. E-Time (Education) — Dedicate 2+ hours per week to learning: read books, watch training videos, attend seminars, listen to podcasts. Growth is the foundation of everything"
     ],
     actionItems: [
-      "Set up a morning routine that includes gratitude and affirmations",
-      "Keep personal note cards and stamps at your desk",
-      "Schedule 2 hours of phone time per week for live interviews",
-      "Track your activities on the Ninja Scorecard daily",
-      "Dedicate at least 2 hours per week to education and training"
+      "Tomorrow morning: set your alarm 30 minutes earlier and do habits 1-3 before touching your phone",
+      "Today: order 100 personal note cards and a book of stamps — have them at your desk by next week",
+      "This week: block two 1-hour 'phone time' sessions on your calendar and make at least 20 live calls",
+      "Print or create a Ninja Scorecard spreadsheet and start tracking daily: notes sent, calls made, appointments set, contracts written",
+      "Find or form a Ninja accountability group — commit to a weekly 30-minute meeting"
     ]
   },
   {
     id: "ford-method",
     name: "FORD Method",
-    description: "FORD stands for Family, Occupation, Recreation, and Dreams. It's a framework for having meaningful conversations that build deep, authentic relationships with your contacts.",
+    description: "A conversation framework — Family, Occupation, Recreation, Dreams — that turns small talk into meaningful relationships and naturally surfaces real estate opportunities.",
+    deepDive: "FORD is not a script — it's a mindset for genuine conversations. Most agents default to talking about real estate, which puts people on guard. FORD flips this: you talk about THEM, and real estate comes up naturally. Family questions build emotional rapport ('How are the kids adjusting to the new school?'). Occupation questions uncover financial changes and relocations ('I heard your company is expanding — are they moving offices?'). Recreation questions reveal lifestyle preferences that connect to housing ('You mentioned you're getting into gardening — are you running out of yard space?'). Dreams questions are the gold mine — this is where people tell you about their future, and their future almost always involves real estate ('We've always dreamed of living near the coast when the kids are grown'). The key discipline is logging FORD notes in your CRM after every conversation, so when you follow up weeks or months later, you can reference specific details. This makes people feel remembered and valued — which is why they refer you.",
     principles: [
-      "Family: Ask about their family, kids, pets, and loved ones",
-      "Occupation: Learn about their work, career goals, and professional life",
-      "Recreation: Discover their hobbies, interests, and how they spend free time",
-      "Dreams: Uncover their aspirations, bucket list items, and future goals",
-      "Listen more than you talk - the goal is to learn about THEM"
+      "Family: Ask about their spouse/partner, children, parents, pets, extended family. People light up when they talk about the people they love — and family changes (new baby, kids leaving for college, aging parents) often trigger real estate decisions",
+      "Occupation: Understand what they do for work, how it's going, any changes ahead. Job changes, promotions, relocations, and retirements are among the top reasons people buy or sell",
+      "Recreation: Learn what they do for fun — hobbies, sports, travel, volunteer work. This reveals lifestyle needs (bigger garage for the boat, closer to the trails, extra bedroom for the home gym) and gives you pop-by gift ideas",
+      "Dreams: Ask 'If you could wave a magic wand, what would your life look like in 5 years?' Dreams reveal future real estate needs before the person even realizes they're needs. This is where the biggest opportunities live",
+      "The 80/20 Rule: Listen 80% of the time, talk 20%. Ask follow-up questions. The person who asks the questions controls the conversation — and the person who listens earns the trust"
     ],
     actionItems: [
-      "Record FORD notes in your CRM after every meaningful conversation",
-      "Use FORD topics to start conversations during pop-bys",
-      "Reference previous FORD details in follow-up conversations",
-      "Ask about dreams - this is where real estate opportunities emerge",
-      "Practice active listening: put down your phone and be present"
+      "After your next 5 conversations, immediately open your CRM and log at least 2 FORD notes per person",
+      "Before your next pop-by or call, review that person's FORD notes and reference something specific ('Last time we talked, you mentioned Sarah was starting soccer — how's that going?')",
+      "Practice asking Dreams questions this week — it feels uncomfortable at first, but it's where the magic happens",
+      "Create a pop-by gift list based on Recreation notes (e.g., a gardening book for the contact who loves their yard)",
+      "Set a weekly reminder to review 10 contacts' FORD notes and identify who's due for a personal touch"
     ]
   },
   {
     id: "flow-system",
     name: "Flow & Auto-Flow",
-    description: "Flow is Ninja Selling's systematic approach to maintaining consistent contact with your database. Auto-Flow automates touchpoints so no one falls through the cracks, while personal Flow adds the human touch.",
+    description: "A two-layered system for staying top-of-mind with your entire database — automated baseline touches plus intentional personal connections on a scheduled cadence.",
+    deepDive: "Flow solves the biggest problem in relationship-based business: people forget about you. Even your biggest fans will call another agent if you haven't been in touch. The system has two layers. Auto-Flow is the baseline: automated monthly touches (email newsletters, market reports, community updates) that keep your name in front of your database with zero daily effort. You set it up once and it runs. Personal Flow is the layer that builds real loyalty: handwritten notes, phone calls, pop-bys (stopping by with a small gift), and Customer Service Calls. The cadence depends on the contact tier — your top 50 get monthly personal touches, your next 100 get quarterly, and everyone else gets Auto-Flow plus occasional personal contact. Customer Service Calls are a Ninja signature: calling past clients 30 days, 90 days, and annually after closing to ask 'How's the house? Is there anything I can help with?' This generates referrals at an astonishing rate because no other agent does this. The compounding effect is powerful — after 2-3 years of consistent Flow, most of your business comes inbound from people who already trust you.",
     principles: [
-      "Auto-Flow: Automated monthly value-add touches (market updates, newsletters, etc.)",
-      "Personal Flow: Intentional calls, notes, and pop-bys on a scheduled basis",
-      "Customer Service Calls: Regular check-ins with past clients",
-      "The goal is staying top-of-mind without being pushy",
-      "Consistency beats intensity - small regular touches outperform occasional big gestures"
+      "Auto-Flow: Set up automated monthly value-add content (market reports, home maintenance tips, local events) that provides genuine value — not self-promotional 'just listed/just sold' blasts",
+      "Personal Flow: Schedule intentional personal touches — handwritten notes, phone calls, pop-bys, and face-to-face meetings — on a cadence that matches the relationship tier",
+      "Customer Service Calls: Call every past client at 30 days, 90 days, and annually after closing. Ask 'How's the house? Anything I can help with?' This single habit generates more referrals than any marketing campaign",
+      "Consistency beats intensity: 12 small monthly touches outperform 1 big annual event. People need to hear from you 7-12 times per year to remember you when a real estate need arises",
+      "Tiered approach: A-contacts (top 50) get monthly personal Flow + Auto-Flow. B-contacts (next 100-150) get quarterly personal Flow + Auto-Flow. C-contacts get Auto-Flow only"
     ],
     actionItems: [
-      "Set up a monthly auto-flow email/newsletter with market insights",
-      "Schedule customer service calls for all past clients quarterly",
-      "Plan quarterly pop-bys for your top 100 contacts",
-      "Use your CRM to track last contact dates and set reminders",
-      "Create a flow calendar that maps out the entire year"
+      "This week: set up a monthly Auto-Flow email using your CRM or a tool like Mailchimp — focus on market insights and community value, not self-promotion",
+      "Create a spreadsheet of your top 50 contacts and schedule one personal touch per person per month (note, call, or pop-by)",
+      "Pull a list of all past clients and schedule Customer Service Calls — start with anyone who closed in the last 12 months",
+      "Plan your next quarter's pop-by theme (e.g., pumpkin pie at Thanksgiving, flower seeds in spring) and order supplies",
+      "Build a 12-month Flow Calendar on one page: map out which Auto-Flow content and pop-by themes happen each month"
     ]
   },
   {
     id: "real-estate-reviews",
     name: "Real Estate Reviews",
-    description: "Annual property reviews position you as a trusted advisor rather than a salesperson. By helping homeowners understand their property value, equity, and market position, you create natural opportunities for business.",
+    description: "Annual property value reviews that position you as a trusted financial advisor — not a salesperson — while naturally uncovering listing, buying, and referral opportunities.",
+    deepDive: "The Annual Real Estate Review is one of the most powerful tools in the Ninja system because it provides massive value with zero sales pressure. Here's how it works: you contact homeowners in your database (past clients, neighbors, sphere) and offer a free annual review of their property's current market value, equity position, and neighborhood trends — similar to how a financial advisor reviews your portfolio. During the review, you walk them through a professional report showing what their home is worth today, how much equity they've built, whether their insurance coverage is adequate, and what's happening in their local market. You're not asking them to sell. You're giving them information they genuinely need. The magic is in the outcomes: during these conversations, people naturally tell you about their plans. 'Actually, we've been thinking about downsizing.' 'My neighbor mentioned they might sell.' 'My sister just got transferred and needs an agent in Denver.' You didn't ask for business — they volunteered it, because you provided real value and they trust you. Agents who do 5-10 reviews per week consistently report that it becomes their number one source of listings and referrals.",
     principles: [
-      "Provide value by analyzing the homeowner's property value and equity growth",
-      "Review insurance coverage to ensure adequate protection",
-      "Discuss neighborhood market trends and recent sales",
-      "Position yourself as their lifelong real estate advisor",
-      "Reviews naturally surface listing, buying, and referral opportunities"
+      "Lead with value: Prepare a professional CMA-style report showing current home value, equity growth since purchase, and comparable sales — this is genuinely useful information homeowners want",
+      "Review insurance coverage: Many homeowners are underinsured as their home value has increased. Flagging this shows you care about their financial well-being, not just transactions",
+      "Discuss neighborhood trends: Share recent sales, days on market, and price trends in their specific neighborhood. Local expertise builds trust and authority",
+      "Position as a recurring service: Frame this as something you do annually for all your clients, like a financial check-up. This creates an expectation of ongoing relationship",
+      "Opportunities surface naturally: Don't pitch. When people trust you and you're asking about their lives (FORD), they'll tell you about their plans. 'Who else might find this valuable?' is the only 'ask' you need"
     ],
     actionItems: [
-      "Schedule annual reviews for all homeowner contacts",
-      "Prepare a professional property analysis report before each review",
-      "Host quarterly market update events for groups of contacts",
-      "Follow up within 48 hours with a summary and any action items",
-      "Ask for referrals naturally: 'Who else might benefit from a review like this?'"
+      "Create a professional Real Estate Review template (1-2 page report with property value, equity, neighborhood comps, and insurance reminder)",
+      "Pull a list of all homeowners in your database and schedule 5 review offers per week via phone calls",
+      "After each review, send a follow-up email with the report summary and a handwritten thank-you note",
+      "Host a quarterly 'Market Update' event (in-person or virtual) for groups of 10-20 contacts as a scaled version of the review",
+      "Track your reviews on your Ninja Scorecard: reviews offered, reviews completed, and opportunities generated"
     ]
   },
   {
     id: "buyer-seller-process",
     name: "The Ninja Buyer & Seller Process",
-    description: "Structured step-by-step processes for guiding buyers and sellers through their real estate journey with professionalism, care, and a consultative approach.",
+    description: "Structured, consultative processes for guiding buyers and sellers that replace high-pressure tactics with trust, education, and genuine problem-solving.",
+    deepDive: "Traditional agents show houses and hope for the best. Ninjas follow a structured process that positions them as trusted consultants. For buyers, the 10-Step Buyer Process starts with a formal Buyer Consultation BEFORE showing any homes. In this meeting, you understand their needs, timeline, financial situation, and dreams (FORD). You educate them on the buying process, set expectations, and establish a working agreement. Only then do you show homes — and because you listened first, you show fewer homes that are better matches. For sellers, the process starts with a Pre-Listing Packet (sent before you meet) that educates them on your approach and the selling process. The Listing Consultation is where you present your market analysis and have the critical pricing conversation. Ninjas 'solve for price' — meaning you help sellers understand what the market will bear, rather than telling them what they want to hear. This requires courage, but it earns enormous trust and leads to properly priced listings that sell faster. The process doesn't end at closing: the post-closing follow-up (Customer Service Calls at 30, 90, and 365 days) transitions the client into your long-term database for future business and referrals.",
     principles: [
-      "10-Step Buyer Process: From initial consultation to closing and beyond",
-      "Buyer consultation before showing homes - understand their needs first",
-      "Strategic pricing for sellers - solve for price, don't just list high",
-      "Pre-listing packet and listing consultation process",
-      "Post-closing follow-up and transition to long-term relationship"
+      "Buyer Consultation first, always: Never show homes without first understanding needs, timeline, finances, and motivations. This meeting establishes trust, sets expectations, and saves everyone time",
+      "10-Step Buyer Process: (1) Lead generation → (2) Initial contact → (3) Buyer consultation → (4) Pre-approval → (5) Home search → (6) Showing homes → (7) Writing offers → (8) Under contract → (9) Closing → (10) Post-closing follow-up and referral cultivation",
+      "Pre-Listing Packet: Send an educational packet before the listing appointment that demonstrates your value, explains your process, and sets you apart from agents who just 'show up and pitch'",
+      "Solve for price: Have the courage to present honest market data and recommend the right price, even if it's lower than the seller hopes. Properly priced homes sell faster, net more, and generate referrals",
+      "Post-closing is where the real business starts: The transaction is just the beginning of the relationship. Customer Service Calls at 30, 90, and 365 days generate more referrals than any marketing"
     ],
     actionItems: [
-      "Always start with a buyer consultation before showing any homes",
-      "Use the pre-listing packet to set expectations and demonstrate value",
-      "Practice the pricing conversation using Ninja scripts",
-      "Create a closing gift and follow-up system",
-      "Add every closed client to your top 100 database"
+      "Create or refine your Buyer Consultation presentation — include your process overview, market education, and a working agreement for the buyer to sign",
+      "Build a Pre-Listing Packet: include your bio, testimonials, marketing plan, pricing philosophy, and a brief overview of the Ninja selling process",
+      "Role-play the pricing conversation with a partner this week: practice presenting comps and recommending a price with confidence and empathy",
+      "Set up a post-closing system in your CRM: automated reminders for 30-day, 90-day, and annual Customer Service Calls for every closed client",
+      "After your next closing, add the client to your top contacts list and send a handwritten note within 48 hours"
     ]
   },
   {
     id: "pie-time",
     name: "PIE Time Management",
-    description: "The PIE framework divides your work time into three categories to ensure balanced effort across all aspects of your business: Proactive time, Income time, and Education time.",
+    description: "A time-blocking framework that divides your week into Proactive, Income, and Education time — ensuring you build future business even when current business is busy.",
+    deepDive: "Most agents spend almost all their time on I-Time (Income-producing activities like showings, negotiations, and closings) and wonder why their pipeline dries up between transactions. PIE solves this by making P-Time (Proactive) the priority. P-Time is when you build your future business: calling your database, writing notes, doing pop-bys, conducting Real Estate Reviews, and nurturing relationships. I-Time is when you service current business: showing homes, writing contracts, managing transactions. E-Time is when you grow: reading, attending training, watching Ninja Selling videos, role-playing with a partner. The Ninja ideal is a 20-hour productive work week — not because you work less, but because you work smarter. A typical Ninja week looks like: 10 hours of P-Time (mornings, before the world gets busy), 8 hours of I-Time (afternoons, when clients are available), and 2 hours of E-Time (one dedicated learning block per week). The critical discipline is protecting your P-Time. When business gets busy, the temptation is to skip P-Time and only do I-Time. But P-Time is what filled your pipeline in the first place — skipping it guarantees a future slowdown. Block your P-Time on your calendar like an unmovable appointment.",
     principles: [
-      "P-Time (Proactive): Database work, pop-bys, calls, notes - building relationships",
-      "I-Time (Income): Showings, listings, negotiations, closings - generating revenue",
-      "E-Time (Education): Training, learning, personal development - growing skills",
-      "The 20-hour work week: Work smarter, not harder",
-      "Protect your P-Time - it's the engine that drives future business"
+      "P-Time (Proactive): The engine of your future business. Includes database calls, handwritten notes, pop-bys, Real Estate Reviews, and relationship building. Block this FIRST on your calendar, ideally in the morning",
+      "I-Time (Income): Servicing current clients — showings, negotiations, inspections, closings. This is important but reactive. Without P-Time feeding the pipeline, I-Time eventually dries up",
+      "E-Time (Education): Continuous learning — books, training videos, role-play, seminars, coaching. Allocate at least 2 hours per week. The best agents never stop learning",
+      "The Ninja 20-Hour Week: Aim for ~10 hours P-Time, ~8 hours I-Time, ~2 hours E-Time. This isn't about working less — it's about eliminating low-value busywork and focusing on high-impact activities",
+      "Protect P-Time fiercely: When you get busy with transactions, your instinct is to stop doing P-Time. This is exactly when you must NOT stop. Treat P-Time like a client appointment that cannot be rescheduled"
     ],
     actionItems: [
-      "Block P-Time on your calendar first, before anything else",
-      "Aim for at least 10 hours of P-Time per week",
-      "Track your PIE hours weekly in the Weekly Planning section",
-      "Don't let I-Time crowd out P-Time during busy periods",
-      "Schedule at least 2 hours of E-Time weekly for growth"
+      "Open your calendar right now and block 2 hours of P-Time every weekday morning for the next 4 weeks — label them 'Ninja P-Time (DO NOT MOVE)'",
+      "Block one 2-hour E-Time slot per week (e.g., Friday morning) for reading, watching training videos, or role-playing",
+      "At the end of each week, log your actual PIE hours: How much time did you spend on P, I, and E? Most agents are shocked at how little P-Time they actually do",
+      "During your next busy period, resist the urge to cancel P-Time — even 30 minutes of calls and notes is better than zero",
+      "Share your PIE time goals with your accountability partner or Ninja group for weekly check-ins"
     ]
   },
   {
     id: "handwritten-notes",
     name: "Handwritten Notes & Personal Touches",
-    description: "In a digital world, handwritten notes create an outsized impact. They show you care enough to take the time, and they stand out in a sea of emails and texts.",
+    description: "The highest-ROI habit in real estate: handwritten notes have a near-100% open rate and make people feel genuinely valued in a world of digital noise.",
+    deepDive: "In an era of email blasts and social media ads, a handwritten note is almost shockingly personal. It takes 2 minutes to write, costs less than a dollar to send, and creates an emotional impact that no digital communication can match. The Ninja system calls for 2 personal notes per day — that's 10 per week, roughly 500 per year. Over time, this single habit seeds your database with goodwill that converts to referrals. The key word is 'personal.' These are NOT 'just sold' postcards or business announcements. They're notes that reference something specific about the person: 'Great seeing you at the farmers market last Saturday — Emma is getting so tall!' or 'Congratulations on the new role at work. You've been working so hard for this.' When someone receives a note like that, they don't throw it away — they put it on their fridge. And when their coworker mentions wanting to buy a house, guess whose name comes to mind? Pop-bys work on the same principle: showing up at someone's door with a small, thoughtful gift (cookies at the holidays, flower seeds in spring, pumpkin pie at Thanksgiving) creates a face-to-face moment that deepens the relationship. The combination of handwritten notes, pop-bys, and phone calls is what makes Personal Flow so powerful.",
     principles: [
-      "Write at least 2 personal notes per day (part of the Ninja Nine)",
-      "Notes should be personal, not business-focused",
-      "Reference specific details from your FORD conversations",
-      "Handwritten notes have a 99% open rate vs. email's ~20%",
-      "The goal is making people feel valued, not generating leads"
+      "Write 2 personal notes per day, every business day — this is Ninja Nine habit #4 and the single most impactful activity in your Ninja practice. 500 notes per year creates an enormous trust bank",
+      "Keep it personal, not promotional: Reference specific details from FORD conversations. Never include business cards, listings, or calls to action. The note IS the marketing — because it shows you care",
+      "Handwritten notes have a near-100% open rate: Every piece of handwritten mail gets opened. Compare that to email (~20% open rate) or social media (algorithm-dependent). This is the most direct line to someone's attention",
+      "Pop-bys amplify the effect: Stopping by with a small, thoughtful gift creates a face-to-face moment. Keep gifts simple and seasonal ($5-10 max). The visit is the gift — the item is just the excuse",
+      "Celebrate milestones generously: Birthdays, work anniversaries, kids' graduations, new pets, home purchase anniversaries. Your CRM + FORD notes make this easy — and people remember who remembered"
     ],
     actionItems: [
-      "Stock up on quality note cards and stamps",
-      "Set a daily reminder to write your 2 notes",
-      "After every meaningful conversation, send a follow-up note",
-      "Celebrate milestones: birthdays, anniversaries, achievements",
-      "Keep a 'notes sent' tracker on your Ninja Scorecard"
+      "Order 200 quality, non-branded note cards and 2 books of stamps this week — have them on your desk where you can see them",
+      "Set a daily alarm or calendar block for note-writing time (many Ninjas do it right after their morning routine)",
+      "After every meaningful conversation this week, jot the person's name on a sticky note — they get a handwritten note within 48 hours",
+      "Plan your next seasonal pop-by: choose a theme, order supplies for your top 25 contacts, and schedule delivery dates on your calendar",
+      "Start a 'Notes Sent' tracker: tally marks on a whiteboard, a column on your Ninja Scorecard, or a simple spreadsheet. Aim for 10 per week minimum"
     ]
   }
 ]
